@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TS Academy — Phishing Evidence Report</title>
+  <style>
+    :root{--bg:#f6f8fb;--card:#ffffff;--accent:#0b5cff;--muted:#6b7280;--danger:#d9534f}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#111;margin:0;padding:24px}
+    .wrap{max-width:920px;margin:0 auto}
+    header{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+    .logo{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,#0b5cff,#6ea8ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:28px}
+    h1{margin:0;font-size:22px;color:#0b5cff}
+    .meta{color:var(--muted);font-size:14px}
+    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06);margin-top:20px}
+    section + section{margin-top:18px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}.logo{width:56px;height:56px}}
+    .img-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .img-grid img{width:100%;height:160px;object-fit:cover;border-radius:8px;border:1px solid #e6eefc}
+    .section-title{font-weight:700;margin-bottom:10px;font-size:16px;color:#0b5cff}
+    ul{margin:8px 0 0 20px}
+    ol{margin:8px 0 0 20px}
+    .small{font-size:14px;color:var(--muted)}
+    .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;margin-top:8px}
+    .danger{color:var(--danger);font-weight:700}
+    footer{margin-top:24px;font-size:13px;color:var(--muted);text-align:center}
+    .mono{font-family:monospace;background:#f3f4f6;padding:6px 10px;border-radius:6px;overflow-x:auto;display:block}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">TS</div>
+      <div>
+        <h1>TS Academy — Phishing Evidence Report</h1>
+        <div class="meta">Responsible disclosure report · Prepared by <strong>Ifeanyichukwu Collins Chibueze</strong></div>
+      </div>
+    </header>
+
+    <div class="card">
+      <section>
+        <div class="section-title">Executive Summary</div>
+        <p class="small">This document contains evidence of a phishing campaign impersonating <strong>TS Academy</strong>. The campaign solicits an "application fee" via a third-party payment integration and uses URLs that do not belong to the official TechStudio Academy domain. This report includes captured emails, screenshots, URL/hosting information, and recommended mitigation steps.</p>
+      </section>
+
+      <section class="grid">
+        <div>
+          <div class="section-title">Key Findings</div>
+          <ul class="small">
+            <li><strong>Impersonation:</strong> Phishing emails/pages use the TS Academy brand with non-official URLs.</li>
+            <li><strong>Unauthorized payment flow:</strong> Victims are directed to Paystack-hosted checkout via fake tracking links.</li>
+            <li><strong>Urgency & social pressure:</strong> Emails use deadlines and limited-time language to force quick payments.</li>
+            <li><strong>Brand risk:</strong> Risk of user loss and reputational damage to TS Academy.</li>
+          </ul>
+
+          <div style="margin-top:12px">
+            <div class="section-title">Timeline</div>
+            <ol class="small">
+              <li>User clicks social post and registers</li>
+              <li>Received automated confirmation emails linking to fake URLs</li>
+              <li>Received "scholarship award" email prompting an application fee</li>
+              <li>Investigation: domain checks, logo mismatch, payment flow inspection</li>
+              <li>Reported findings to official TechStudio Academy contact via WhatsApp</li>
+            </ol>
+          </div>
+
+          <div style="margin-top:12px">
+            <div class="section-title">Immediate Risk</div>
+            <p class="small">High — users may pay money into the scam, exposing financial and personal data.</p>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card" style="padding:14px">
+            <div class="section-title">Indicators (IOC)</div>
+            <div class="small">
+              <div><strong>Tracking domain:</strong></div>
+              <div class="mono">ozdard.clicks.mlsend.com</div>
+
+              <div style="margin-top:8px"><strong>Reported emails:</strong></div>
+              <div class="mono">scholarships@tsacademyonline.com<br>admissions@tsacademyonline.com</div>
+
+              <div style="margin-top:8px"><strong>Official domain:</strong></div>
+              <div class="mono">techstudioacademy.com</div>
+
+              <div style="margin-top:8px"><strong>Suggested action:</strong></div>
+              <ul class="small">
+                <li>Block tracking domain at corporate DNS/web filters</li>
+                <li>Request takedown with hosting provider & Paystack</li>
+                <li>Alert users via official site and social channels</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="margin-top:12px; text-align:center">
+            <div class="small">Prepared on <strong><!--DATE--></strong></div>
+            <a class="btn" href="#evidence">View Evidence</a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="evidence">
+        <div class="section-title">Evidence (Screenshots)</div>
+        <p class="small">Screenshots captured during the investigation. Place your images in the <code>images/</code> folder with names proof1.jpg → proof10.jpg.</p>
+
+        <div class="img-grid" style="margin-top:12px">
+          <img src="/images/proof1.jpg" alt="proof1">
+          <img src="/images/proof2.jpg" alt="proof2">
+          <img src="/images/proof3.jpg" alt="proof3">
+          <img src="/images/proof4.jpg" alt="proof4">
+        </div>
+
+        <div class="img-grid" style="margin-top:10px">
+          <img src="/images/proof5.jpg" alt="proof5">
+          <img src="/images/proof6.jpg" alt="proof6">
+          <img src="/images/proof7.jpg" alt="proof7">
+          <img src="/images/proof8.jpg" alt="proof8">
+        </div>
+
+        <div style="margin-top:10px; display:flex; gap:10px">
+          <img src="/images/proof9.jpg" alt="proof9" style="width:50%;height:200px;object-fit:cover;border-radius:8px;border:1px solid #e6eefc">
+          <img src="/images/proof10.jpg" alt="proof10" style="width:50%;height:200px;object-fit:cover;border-radius:8px;border:1px solid #e6eefc">
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <div class="section-title">Technical Notes</div>
+          <ol class="small">
+            <li>All phishing links point to fake domains, not <code>techstudioacademy.com</code>.</li>
+            <li>Payment flow uses Paystack via third-party checkout.</li>
+            <li>Logo mismatch between email and official site.</li>
+            <li>Collect full email headers and server IPs for takedown.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section style="margin-top:12px">
+        <div class="section-title">Recommendations</div>
+        <ol class="small">
+          <li>Post warnings on official site & socials.</li>
+          <li>Contact Paystack for review.</li>
+          <li>Submit takedown requests for phishing pages.</li>
+          <li>Enable strict SPF/DKIM/DMARC for official domains.</li>
+          <li>Monitor for copycat domains.</li>
+        </ol>
+      </section>
+
+      <section style="margin-top:12px">
+        <div class="section-title">Responsible Disclosure & Support</div>
+        <p class="small">This report is a responsible disclosure. Please contact the researcher for clarification, additional evidence, or takedown coordination.</p>
+
+        <div style="margin-top:8px">
+          <strong>Researcher:</strong><br>
+          Ifeanyichukwu Collins Chibueze<br>
+          <span class="small">Security Researcher (Independent)</span>
+        </div>
+
+        <div style="margin-top:12px">
+          <div class="section-title">Appreciation & Support</div>
+          <p class="small">
+            This investigation required significant time, effort, and technical resources. If TechStudio Academy or partners wish to support continued independent research, a token of appreciation is welcome.
+            <br><br>
+            <strong>Suggested token of appreciation:</strong> ₦50,000<br>
+            <strong>Contact:</strong> <span class="mono">ifeanyichukwucollins008@gmail.com | 08089368681</span>
+          </p>
+          <p class="small">This is optional and does not affect the validity of the security findings above.</p>
+        </div>
+
+      </section>
+
+      <footer>
+        <div class="small">Intended for the security and benefit of TechStudio Academy and its users. Do not share publicly without redaction of personal data.</div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
